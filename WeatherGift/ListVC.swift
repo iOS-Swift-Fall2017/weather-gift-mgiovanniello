@@ -15,7 +15,7 @@ class ListVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var locationsArray = [WeatherLocation]()
     var currentPage = 0
-
+    
     @IBOutlet weak var editBarButton: UIBarButtonItem!
     @IBOutlet weak var addBarButton: UIBarButtonItem!
     
@@ -25,7 +25,7 @@ class ListVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToPageVC" {
@@ -35,7 +35,17 @@ class ListVC: UIViewController {
             destination.locationsArray = locationsArray
         }
     }
-
+    
+    
+    func saveLocations() {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(locationsArray) {
+            UserDefaults.standard.set(encoded, forKey: "locationsArray")
+        } else {
+            print("ERROR: Saving encoded did not work")
+        }
+    }
+    
     @IBAction func editBarButtonPressed(_ sender: UIBarButtonItem) {
         if tableView.isEditing == true {
             tableView.setEditing(false, animated: true)
@@ -54,7 +64,8 @@ class ListVC: UIViewController {
         autocompleteController.delegate = self
         present(autocompleteController, animated: true, completion: nil)
     }
-
+    
+    
 }
 
 
@@ -75,55 +86,59 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             locationsArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            saveLocations()
         }
     }
-
+    
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let itemToMove = locationsArray[sourceIndexPath.row]
         locationsArray.remove(at: sourceIndexPath.row)
         locationsArray.insert(itemToMove, at: destinationIndexPath.row)
+        saveLocations()
     }
     
     //MARK:- tableView methods to freeze the first cell
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        if indexPath.row != 0 {
-//            return true
-//        } else {
-//            return false
-//        }
+        //        if indexPath.row != 0 {
+        //            return true
+        //        } else {
+        //            return false
+        //        }
         return (indexPath.row != 0 ? true : false)
     }
     
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-//        if indexPath.row != 0 {
-//            return true
-//        } else {
-//            return false
-//        }
+        //        if indexPath.row != 0 {
+        //            return true
+        //        } else {
+        //            return false
+        //        }
         return (indexPath.row != 0 ? true : false)
     }
     
     func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
-//        if proposedDestinationIndexPath.row == 0 {
-//            return sourceIndexPath
-//        } else {
-//            return proposedDestinationIndexPath
-//        }
+        //        if proposedDestinationIndexPath.row == 0 {
+        //            return sourceIndexPath
+        //        } else {
+        //            return proposedDestinationIndexPath
+        //        }
         return (proposedDestinationIndexPath.row == 0 ? sourceIndexPath : proposedDestinationIndexPath)
     }
-
-
-func updateTable(place: GMSPlace) {
-    let newIndexPath = IndexPath(row: locationsArray.count, section: 0)
-    var newWeatherLocation = WeatherLocation()
-    newWeatherLocation.name = place.name
-    let latitude = place.coordinate.latitude
-    let longitude = place.coordinate.longitude
-    newWeatherLocation.coordinates = "\(latitude),\(longitude)"
-    print(newWeatherLocation.coordinates)
-    locationsArray.append(newWeatherLocation)
-    tableView.insertRows(at: [newIndexPath], with: .automatic)
+    
+    
+    func updateTable(place: GMSPlace) {
+        let newIndexPath = IndexPath(row: locationsArray.count, section: 0)
+        
+        let latitude = place.coordinate.latitude
+        let longitude = place.coordinate.longitude
+        let newCoordinates = "\(latitude),\(longitude)"
+        
+        let newWeatherLocation = WeatherLocation(name: place.name, coordinates: newCoordinates)
+        
+        locationsArray.append(newWeatherLocation)
+        tableView.insertRows(at: [newIndexPath], with: .automatic)
+        saveLocations()
     }
 }
 

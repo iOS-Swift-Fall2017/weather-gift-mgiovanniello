@@ -8,23 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		AB511BFAE04153E9E54E0859 /* Pods_WeatherGift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D267D92FC803301AB56B92 /* Pods_WeatherGift.framework */; };
-		C9002FAE1F9FDD5A00D9CC01 /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9002FAD1F9FDD5A00D9CC01 /* WeatherLocation.swift */; };
+		C9002FAE1F9FDD5A00D9CC01 /* WeatherDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9002FAD1F9FDD5A00D9CC01 /* WeatherDetail.swift */; };
 		C91DDEF91F95AF1400C3673E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91DDEF81F95AF1400C3673E /* AppDelegate.swift */; };
 		C91DDEFE1F95AF1400C3673E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C91DDEFC1F95AF1400C3673E /* Main.storyboard */; };
 		C91DDF001F95AF1400C3673E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C91DDEFF1F95AF1400C3673E /* Assets.xcassets */; };
 		C91DDF031F95AF1400C3673E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C91DDF011F95AF1400C3673E /* LaunchScreen.storyboard */; };
 		C91DDF0B1F95AF5100C3673E /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91DDF0A1F95AF5100C3673E /* DetailVC.swift */; };
 		C91DDF0D1F9636E500C3673E /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91DDF0C1F9636E500C3673E /* ListVC.swift */; };
+		C92BF4521FD50E4A00B836E1 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BF4511FD50E4A00B836E1 /* AboutVC.swift */; };
 		C96349431FAE7A2B0083F9D2 /* DayWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96349421FAE7A2B0083F9D2 /* DayWeatherCell.swift */; };
 		C9821D811F9639A6000C68F5 /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9821D801F9639A6000C68F5 /* PageVC.swift */; };
 		C99E6C121FA7A6410035F34D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E6C111FA7A6410035F34D /* Constants.swift */; };
+		C9EE74B41FD4E3D400BB4BA9 /* TimeInterval+format.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EE74B31FD4E3D400BB4BA9 /* TimeInterval+format.swift */; };
+		C9EE74B61FD4F18C00BB4BA9 /* HourlyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EE74B51FD4F18C00BB4BA9 /* HourlyWeatherCell.swift */; };
+		C9EE74B81FD4F9E300BB4BA9 /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EE74B71FD4F9E300BB4BA9 /* WeatherLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		69CD199BBB04327BEB0251DD /* Pods-WeatherGift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherGift.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherGift/Pods-WeatherGift.release.xcconfig"; sourceTree = "<group>"; };
 		93D267D92FC803301AB56B92 /* Pods_WeatherGift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherGift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E9BB2FF28364D612813336 /* Pods-WeatherGift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherGift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherGift/Pods-WeatherGift.debug.xcconfig"; sourceTree = "<group>"; };
-		C9002FAD1F9FDD5A00D9CC01 /* WeatherLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
+		C9002FAD1F9FDD5A00D9CC01 /* WeatherDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetail.swift; sourceTree = "<group>"; };
 		C91DDEF51F95AF1400C3673E /* WeatherGift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherGift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91DDEF81F95AF1400C3673E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C91DDEFD1F95AF1400C3673E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -33,9 +37,13 @@
 		C91DDF041F95AF1400C3673E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C91DDF0A1F95AF5100C3673E /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		C91DDF0C1F9636E500C3673E /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
+		C92BF4511FD50E4A00B836E1 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		C96349421FAE7A2B0083F9D2 /* DayWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWeatherCell.swift; sourceTree = "<group>"; };
 		C9821D801F9639A6000C68F5 /* PageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
 		C99E6C111FA7A6410035F34D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C9EE74B31FD4E3D400BB4BA9 /* TimeInterval+format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+format.swift"; sourceTree = "<group>"; };
+		C9EE74B51FD4F18C00BB4BA9 /* HourlyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherCell.swift; sourceTree = "<group>"; };
+		C9EE74B71FD4F9E300BB4BA9 /* WeatherLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +78,7 @@
 		C91DDEEC1F95AF1300C3673E = {
 			isa = PBXGroup;
 			children = (
+				C9EE74B31FD4E3D400BB4BA9 /* TimeInterval+format.swift */,
 				C91DDEF71F95AF1400C3673E /* WeatherGift */,
 				C91DDEF61F95AF1400C3673E /* Products */,
 				1A20AE5FCAB9D7B5B5C12FD8 /* Pods */,
@@ -89,13 +98,16 @@
 			isa = PBXGroup;
 			children = (
 				C91DDEF81F95AF1400C3673E /* AppDelegate.swift */,
-				C9002FAD1F9FDD5A00D9CC01 /* WeatherLocation.swift */,
+				C9002FAD1F9FDD5A00D9CC01 /* WeatherDetail.swift */,
+				C9EE74B71FD4F9E300BB4BA9 /* WeatherLocation.swift */,
 				C9821D801F9639A6000C68F5 /* PageVC.swift */,
+				C91DDF0C1F9636E500C3673E /* ListVC.swift */,
 				C91DDF0A1F95AF5100C3673E /* DetailVC.swift */,
 				C96349421FAE7A2B0083F9D2 /* DayWeatherCell.swift */,
-				C91DDF0C1F9636E500C3673E /* ListVC.swift */,
+				C9EE74B51FD4F18C00BB4BA9 /* HourlyWeatherCell.swift */,
 				C99E6C111FA7A6410035F34D /* Constants.swift */,
 				C91DDEFC1F95AF1400C3673E /* Main.storyboard */,
+				C92BF4511FD50E4A00B836E1 /* AboutVC.swift */,
 				C91DDEFF1F95AF1400C3673E /* Assets.xcassets */,
 				C91DDF011F95AF1400C3673E /* LaunchScreen.storyboard */,
 				C91DDF041F95AF1400C3673E /* Info.plist */,
@@ -238,11 +250,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C96349431FAE7A2B0083F9D2 /* DayWeatherCell.swift in Sources */,
-				C9002FAE1F9FDD5A00D9CC01 /* WeatherLocation.swift in Sources */,
+				C9EE74B61FD4F18C00BB4BA9 /* HourlyWeatherCell.swift in Sources */,
+				C9002FAE1F9FDD5A00D9CC01 /* WeatherDetail.swift in Sources */,
 				C91DDF0D1F9636E500C3673E /* ListVC.swift in Sources */,
 				C9821D811F9639A6000C68F5 /* PageVC.swift in Sources */,
+				C9EE74B81FD4F9E300BB4BA9 /* WeatherLocation.swift in Sources */,
+				C9EE74B41FD4E3D400BB4BA9 /* TimeInterval+format.swift in Sources */,
 				C91DDEF91F95AF1400C3673E /* AppDelegate.swift in Sources */,
 				C91DDF0B1F95AF5100C3673E /* DetailVC.swift in Sources */,
+				C92BF4521FD50E4A00B836E1 /* AboutVC.swift in Sources */,
 				C99E6C121FA7A6410035F34D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
